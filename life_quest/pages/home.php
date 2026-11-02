@@ -28,5 +28,9 @@ $assets = '/css/assets';
 
         <img src="<?= $assets ?>/characters.png" alt="" class="characters" aria-hidden="true">
     </main>
+
+
+
+    
 </body>
 </html>
