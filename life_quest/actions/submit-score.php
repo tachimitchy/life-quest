@@ -18,4 +18,4 @@ sb('POST', '/rest/v1/attempts', [
   'score' => $score, 'time_sec' => $time, 'correct_count' => $correct,
 ], $user['jwt']);
 
-echo json_encode(['score' => $score, 'best' => max($score, $prev), 'new_high' => $score > $prev]);
+echo json_encode(['score' => $score, 'best' => max($score, $prev), 'new_high' => $score > $prev]);?>

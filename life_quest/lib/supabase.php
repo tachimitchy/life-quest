@@ -20,4 +20,4 @@ function sb(string $method, string $path, ?array $body = null, ?string $jwt = nu
   $code = $res === false ? 0 : curl_getinfo($ch, CURLINFO_HTTP_CODE);
   curl_close($ch);
   return ['status' => $code, 'data' => $res === false ? null : json_decode($res, true)];
-}
+}?>
