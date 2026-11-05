@@ -1,0 +1,16 @@
+{
+  "builds": [
+    {
+      "src": "api/index.php",
+      "use": "vercel-php@0.7.3",
+      "config": {
+        "includeFiles": ["pages/**", "lib/**", "partials/**", "actions/**"]
+      }
+    },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
+  ]
+}
