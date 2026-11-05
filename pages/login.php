@@ -150,7 +150,7 @@
 
   <main class="card">
     <header class="header">
-      <h1>Welcome back</h1>
+      <h1>LIFE QUEST</h1>
       <p>Please enter your details to sign in.</p>
     </header>
 
@@ -193,6 +193,29 @@
     <footer class="footer">
       Don't have an account? <a href="#">Sign up</a>
     </footer>
+    
+<body>
+
+    <h2>Login</h2>
+
+    <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <br><br>
+
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account?
+        <a href="register.php">Register here</a>
+    </p>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
 </main>
 
 
