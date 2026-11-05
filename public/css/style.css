@@ -24,7 +24,7 @@ body {
 
 /* Background artwork fills the whole viewport, including desktop */
 .bg-scene {
-    background-image: url('assets/landing-bg.png');
+    background-image: url('../../images/lq.jpg');
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ body {
 .bg-scene.dim {
     background-image:
         linear-gradient(rgba(13, 10, 36, 0.65), rgba(13, 10, 36, 0.8)),
-        url('assets/landing-bg.png');
+        url('../../images/lq.jpg');
 }
 
 /* Phone-width column, centered */
