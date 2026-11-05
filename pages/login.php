@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+  <title>Login - Life Quest</title>
   <style>
     * {
       box-sizing: border-box;
@@ -154,7 +154,7 @@
       <p>Please enter your details to sign in.</p>
     </header>
 
-    <form action="#" method="POST">
+    <form action="login.php" method="POST">
       <div class="form-group">
         <label for="email">Email address</label>
         <input 
@@ -191,41 +191,10 @@
     </form>
 
     <footer class="footer">
-      Don't have an account? <a href="#">Sign up</a>
+      Don't have an account? <a href="register.php">Sign up</a>
     </footer>
-    
-<body>
+  </main>
 
-    <h2>Login</h2>
-
-    <form id="loginForm">
-        <input type="text" id="loginUsername" placeholder="Username" required>
-        <br><br>
-
-        <input type="password" id="loginPassword" placeholder="Password" required>
-        <br><br>
-
-        <button type="submit">Login</button>
-    </form>
-
-    <p>Don't have an account?
-        <a href="register.php">Register here</a>
-    </p>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-</main>
-
-
-
-
-
-
-
-
-
-
+  <script src="script.js"></script>
 </body>
 </html>
