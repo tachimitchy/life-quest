@@ -1,3 +1,16 @@
+<?php
+require_once __DIR__ . '/../lib/auth.php';
+
+$error = null;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $error = auth_login(trim($_POST['email'] ?? ''), $_POST['password'] ?? '');
+  if (!$error) {
+    $u = current_user();
+    redirect(home_for_role($u['role'] ?? ''));
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,6 +168,9 @@
     </header>
 
     <form action="login.php" method="POST">
+        <?php if ($error): ?>
+          <p style="color:#e5484d;"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
       <div class="form-group">
         <label for="email">Email address</label>
         <input 
