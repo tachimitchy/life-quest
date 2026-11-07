@@ -183,9 +183,9 @@
     </p>
 
     <nav class="menu" aria-label="Page links">
-      <a href="login.php" class="btn btn-login">Login</a>
-      <a href="register.php" class="btn btn-register">Register</a>
-      <a href="index.php" class="btn btn-home">Home</a>
+      <a href="/login" class="btn btn-login">Login</a>
+      <a href="/register" class="btn btn-register">Register</a>
+      <a href="/index" class="btn btn-home">Home</a>
     </nav>
   </main>
 

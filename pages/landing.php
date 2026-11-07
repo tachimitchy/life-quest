@@ -192,9 +192,9 @@
     </header>
 
     <nav class="menu" aria-label="Main menu">
-      <a href="login.php" class="btn btn-login">Login</a>
-      <a href="register.php" class="btn btn-register">Register</a>
-      <a href="about.php" class="btn btn-about">About</a>
+      <a href="/login" class="btn btn-login">Login</a>
+      <a href="/register" class="btn btn-register">Register</a>
+      <a href="/about" class="btn btn-about">About</a>
     </nav>
   </main>
 
