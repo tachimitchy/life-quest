@@ -324,7 +324,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 
     <footer class="footer">
-      Already have an account? <a href="login.php">Login</a>
+      Already have an account? <a href="/login">Login</a>
     </footer>
   </main>
 
