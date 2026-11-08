@@ -101,7 +101,7 @@ function current_user(): ?array {
 }
 
 function home_for_role(string $role): string {
-  return ['student' => '/student', 'teacher' => '/teacher', 'admin' => '/admin'][$role] ?? '/';
+  return ['student' => '/dashboard', 'teacher' => '/teacher', 'admin' => '/admin'][$role] ?? '/';
 }
 
 // Use at the top of pages (redirects) or actions ($json = true -> JSON errors).

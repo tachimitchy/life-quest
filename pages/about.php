@@ -28,30 +28,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1.5rem 8rem;
+      padding: 2rem 1.5rem 2rem;
       font-family: "VT323", "Courier New", monospace;
-      background:
-        radial-gradient(2px 2px at 12% 18%, #fff 50%, transparent 51%),
-        radial-gradient(2px 2px at 28% 62%, #fff 50%, transparent 51%),
-        radial-gradient(3px 3px at 47% 12%, #ffe9a8 50%, transparent 51%),
-        radial-gradient(2px 2px at 63% 44%, #fff 50%, transparent 51%),
-        radial-gradient(2px 2px at 78% 20%, #fff 50%, transparent 51%),
-        radial-gradient(3px 3px at 90% 58%, #ffe9a8 50%, transparent 51%),
-        linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%);
-      background-attachment: fixed;
-    }
-
-    .ground {
-      position: fixed;
-      left: 0; right: 0; bottom: 0;
-      height: 5rem;
-      border-top: 16px solid var(--grass);
-      box-shadow: inset 0 -8px 0 var(--grass-dark);
-      background:
-        repeating-linear-gradient(90deg, transparent 0 28px, var(--dirt-dark) 28px 32px),
-        repeating-linear-gradient(0deg, transparent 0 28px, var(--dirt-dark) 28px 32px),
-        var(--dirt);
-      pointer-events: none;
+      background: #2b2a5a;
     }
 
     .card {
@@ -146,12 +125,19 @@
 
     @media (max-width: 480px) { .menu { grid-template-columns: 1fr; } }
     @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+  
+    .logo { display: block; width: min(300px, 80%); height: auto; margin: 0 auto; image-rendering: auto; filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.35)); }
+    .logo-sm { width: min(150px, 45%); margin-bottom: 0.9rem; }
+    .title .logo { width: min(340px, 90%); }
+    .header h1 { line-height: 1; }
   </style>
 </head>
 <body>
+<?php require __DIR__ . '/../partials/scene.php'; ?>
 
   <main class="card">
     <header class="header">
+      <span class="lq-title lq-sm"><span class="lq-life">Life</span> <span class="lq-quest">Quest</span></span>
       <h1>About Life Quest</h1>
     </header>
 
@@ -183,13 +169,11 @@
     </p>
 
     <nav class="menu" aria-label="Page links">
-      <a href="/login" class="btn btn-login">Login</a>
-      <a href="/register" class="btn btn-register">Register</a>
-      <a href="/" class="btn btn-home">Home</a>
+      <a href="login.php" class="btn btn-login">Login</a>
+      <a href="register.php" class="btn btn-register">Register</a>
+      <a href="index.php" class="btn btn-home">Home</a>
     </nav>
   </main>
-
-  <div class="ground" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>
