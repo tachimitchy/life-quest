@@ -139,9 +139,46 @@
   .lq-ray.r1 { left: 24px; top: -2px; transform: rotate(-38deg); }
   .lq-ray.r2 { left: 68px; top: -10px; animation-delay: -0.5s; }
   .lq-ray.r3 { left: 108px; top: -2px; transform: rotate(38deg); animation-delay: -1s; }
+
+  /* ===== Night Time (chosen in Settings) ===== */
+  .stars { display: none; left: 0; top: 0; width: 3px; height: 3px; animation: twinkle 3s steps(2) infinite; }
+  .s1 { box-shadow: 82vw 42vh 0 0 #fff3b0, 76vw 5vh 0 0 #ffffff, 75vw 39vh 0 0 #fff3b0, 52vw 5vh 0 0 #cfe0ff, 30vw 4vh 0 0 #ffffff, 73vw 10vh 0 0 #ffffff, 39vw 28vh 0 0 #cfe0ff, 20vw 36vh 0 0 #ffffff, 17vw 38vh 0 0 #fff3b0, 41vw 37vh 0 0 #cfe0ff, 89vw 13vh 0 0 #ffffff, 15vw 39vh 0 0 #cfe0ff, 75vw 42vh 0 0 #ffffff, 26vw 25vh 0 0 #ffffff, 14vw 37vh 0 0 #ffffff, 93vw 6vh 0 0 #fff3b0, 74vw 5vh 0 0 #fff3b0, 81vw 15vh 0 0 #ffffff, 65vw 45vh 0 0 #ffffff, 70vw 29vh 0 0 #ffffff, 42vw 31vh 0 0 #cfe0ff, 76vw 31vh 0 0 #fff3b0, 48vw 21vh 0 0 #ffffff, 33vw 52vh 0 0 #cfe0ff, 25vw 46vh 0 0 #ffffff, 33vw 7vh 0 0 #ffffff; }
+  .s2 { width: 2px; height: 2px; animation-delay: -1.5s; box-shadow: 60vw 6vh 0 0 #cfe0ff, 13vw 19vh 0 0 #fff3b0, 62vw 46vh 0 0 #cfe0ff, 87vw 6vh 0 0 #fff3b0, 9vw 48vh 0 0 #fff3b0, 91vw 21vh 0 0 #cfe0ff, 84vw 38vh 0 0 #fff3b0, 89vw 54vh 0 0 #fff3b0, 59vw 20vh 0 0 #cfe0ff, 93vw 26vh 0 0 #ffffff, 87vw 24vh 0 0 #ffffff, 4vw 31vh 0 0 #cfe0ff, 47vw 12vh 0 0 #fff3b0, 80vw 9vh 0 0 #ffffff, 65vw 5vh 0 0 #fff3b0, 29vw 51vh 0 0 #ffffff, 38vw 10vh 0 0 #fff3b0, 96vw 17vh 0 0 #fff3b0, 52vw 27vh 0 0 #ffffff, 65vw 7vh 0 0 #cfe0ff, 23vw 30vh 0 0 #ffffff, 53vw 37vh 0 0 #cfe0ff, 37vw 58vh 0 0 #cfe0ff, 19vw 54vh 0 0 #fff3b0, 57vw 57vh 0 0 #fff3b0, 72vw 19vh 0 0 #cfe0ff, 92vw 28vh 0 0 #fff3b0, 47vw 45vh 0 0 #cfe0ff, 50vw 16vh 0 0 #fff3b0, 21vw 7vh 0 0 #cfe0ff; }
+  @keyframes twinkle { 50% { opacity: 0.25; } }
+
+  .scene.night { background: linear-gradient(180deg, #04061a 0%, #0b0f3a 45%, #1a1a5a 75%, #2a2272 100%); }
+  .night .stars { display: block; }
+  .night .sun { left: 91%; bottom: 40%; background: radial-gradient(circle at 35% 38%, #cfcdbf 0 5px, transparent 6px), radial-gradient(circle at 66% 64%, #cfcdbf 0 4px, transparent 5px), #f4f2e6;
+    box-shadow: 0 0 0 8px rgba(244, 242, 230, 0.12), 0 0 46px 16px rgba(190, 205, 255, 0.35); }
+  .night .cloud { background: #2b3170 !important; opacity: 0.6; }
+  .night .bird { display: none; }
+  .night .m-far { background: #25285a; }
+  .night .m-near { background: linear-gradient(105deg, #4a4d86 0 48%, #32356a 48%); }
+  .night .m-hill { background: #1f4a2e; }
+  .night :is(.forest, .tr1, .tr2, .cn, .pine, .bush, .rt-c, .rt-t, .ground) { filter: brightness(0.5) saturate(0.9); }
+  .night .c-wall { background: #4a4960; }
+  .night .c-t { background: #5b5a76; }
+  .night .c-t::before { background: #7a3320; }
+  .night .c-t::after { content: ""; position: absolute; left: 50%; top: 14px; width: 6px; height: 9px; margin-left: -3px; background: #ffd25a; box-shadow: 0 0 8px 2px #ffd25a; }
+  .night .ff { box-shadow: 0 0 10px 4px rgba(255, 243, 160, 0.8); }
+  .night .lamp::before { box-shadow: 0 0 30px 12px rgba(255, 210, 90, 0.8); }
+
+  /* letters and buttons shine like stars at night */
+  @keyframes glowpulse { from { filter: drop-shadow(0 0 3px rgba(255, 255, 170, 0.5)); } to { filter: drop-shadow(0 0 12px rgba(255, 255, 200, 0.95)); } }
+  @keyframes starbtn { from { filter: brightness(1) drop-shadow(0 0 3px rgba(255, 255, 190, 0.45)); } to { filter: brightness(1.22) drop-shadow(0 0 10px rgba(255, 255, 190, 0.9)); } }
+  body:has(.scene.night) :is(.lq-title, .lq-badge, .header h1:not(.title), .welcome h1, .page-title) { animation: glowpulse 2.6s ease-in-out infinite alternate; }
+  body:has(.scene.night) :is(.btn, .btn-submit, .btn-back, .tile, .nav a, .px, .role-option span, .theme-option span) { animation: starbtn 2.2s ease-in-out infinite alternate; }
+  body:has(.scene.night) :is(.btn, .btn-submit, .btn-back, .tile, .nav a, .px):nth-child(2n) { animation-delay: -1s; }
+  body:has(.scene.night) :is(.btn, .btn-submit, .btn-back, .tile, .nav a, .px):nth-child(3n) { animation-delay: -1.7s; }
+  body:has(.scene.night) :is(.caption, .sub-caption, .header p, .profile-role, .section-title, .welcome p, .lead, .footer, label, legend, .announce, .panel p) { text-shadow: 0 0 8px rgba(190, 205, 255, 0.75); }
+  @media (prefers-reduced-motion: reduce) {
+    body:has(.scene.night) :is(.lq-title, .lq-badge, .header h1, .welcome h1, .page-title, .btn, .btn-submit, .btn-back, .tile, .nav a, .px, .role-option span, .theme-option span) { animation: none; }
+  }
 </style>
 
-<div class="scene" aria-hidden="true">
+<?php $__night = (($_COOKIE['lq_theme'] ?? '') === 'night'); ?>
+<div class="scene<?= $__night ? ' night' : '' ?>" aria-hidden="true">
+  <div class="stars s1"></div><div class="stars s2"></div>
   <div class="cloud cl1"></div><div class="cloud cl2"></div><div class="cloud cl3"></div>
   <div class="sun"></div>
   <div class="m-far"></div>
